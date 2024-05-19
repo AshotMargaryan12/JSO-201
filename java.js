@@ -1,100 +1,176 @@
-  (function () {
+var $slider = $('.landing .slider'),
 
-  const second = 1000,
+  maxItems = $('.item', $slider).length,
 
-        minute = second * 60,
+  dragging = false,
 
-        hour = minute * 60,
+  tracking,
 
-        day = hour * 24;
-let today = new Date(),
+  rightTracking;
 
-      dd = String(today.getDate()).padStart(2, "0"),
 
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
 
-      yyyy = today.getFullYear(),
+$sliderRight = $('.landing').clone().addClass('landing-right').appendTo($('.split-landing'));
 
-      nextYear = yyyy + 1,
 
-      dayMonth = "05/15/",  
 
-      date = dayMonth + yyyy;
+rightItems = $('.item', $sliderRight).toArray();
 
-   today = mm + "/" + dd + "/" + yyyy;
+reverseItems = rightItems.reverse();
 
-  if (today > date) {
+$('.slider', $sliderRight).html('');
 
-    date = dayMonth + nextYear;
+for (i = 0; i < maxItems; i++) {
+
+  $(reverseItems[i]).appendTo($('.slider', $sliderRight));
+
+}
+
+
+
+$slider.addClass('landing-left');
+
+$('.landing-left').slick({
+
+  vertical: true,
+
+  verticalSwiping: true,
+
+  arrows: false,
+
+  infinite: true,
+
+  dots: true,
+
+  speed: 1000,
+
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+
+}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+
+
+
+  if (currentSlide > nextSlide && nextSlide == 0 && currentSlide == maxItems - 1) {
+
+    $('.landing-right .slider').slick('slickGoTo', -1);
+
+    $('.landing-text').slick('slickGoTo', maxItems);
+
+ $('.landing-p').slick('slickGoTo', maxItems);
+
+  } else if (currentSlide < nextSlide && currentSlide == 0 && nextSlide == maxItems - 1) {
+
+    $('.landing-right .slider').slick('slickGoTo', maxItems);
+
+    $('.landing-text').slick('slickGoTo', -1);
+
+ $('.landing-p').slick('slickGoTo', -1);
+
+  } else {
+
+    $('.landing-right .slider').slick('slickGoTo', maxItems - 1 - nextSlide);
+
+    $('.landing-text').slick('slickGoTo', nextSlide);
+
+ $('.landing-p').slick('slickGoTo', nextSlide);
 
   }
-  const countDown = new Date(date).getTime(),
 
-      x = setInterval(function() {    
+}).on("mousewheel", function(event) {
 
+  event.preventDefault();
 
+  if (event.deltaX > 0 || event.deltaY < 0) {
 
-        const now = new Date().getTime(),
+    $(this).slick('slickNext');
 
-              distance = countDown - now;
+  } else if (event.deltaX < 0 || event.deltaY > 0) {
 
+    $(this).slick('slickPrev');
 
+  };
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
+}).on('mousedown touchstart', function(){
 
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+  dragging = true;
 
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+  tracking = $('.slick-track', $slider).css('transform');
 
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+  tracking = parseInt(tracking.split(',')[5]);
 
+  rightTracking = $('.landing-right .slick-track').css('transform');
 
+  rightTracking = parseInt(rightTracking.split(',')[5]);
 
-        if (distance < 0) {
+}).on('mousemove touchmove', function(){
 
-          document.getElementById("headline").innerText = "Акция!";
+  if (dragging) {
 
-          document.getElementById("countdown").style.display = "none";
+    newTracking = $('.landing-left .slick-track').css('transform');
 
-          document.getElementById("content").style.display = "block";
+    newTracking = parseInt(newTracking.split(',')[5]);
 
-          clearInterval(x);
+    diffTracking = newTracking - tracking;
 
-        }
+    $('.landing-right .slick-track').css({'transform': 'matrix(1, 0, 0, 1, 0, ' + (rightTracking - diffTracking) + ')'});
 
-        //seconds
+  }
 
-      }, 0)
+}).on('mouseleave touchend mouseup', function(){
 
-  }());
-    var divToggleVis = document.getElementById('spoiler_text');
+  dragging = false;
 
-var button = document.getElementById('spoiler_button');
-
-
-
-button.onclick = function() {
-
-    if (divToggleVis.className === 'fadeout') {
-
-        divToggleVis.className = 'fadein';
-
-    } else {
-
-        divToggleVis.className = 'fadeout';
-
-    }
+});
 
 
 
-    if (button.innerHTML === 'узнать') {
+$('.landing-right .slider').slick({
 
-        button.innerHTML = 'скрыть';
+  swipe: false,
 
-    } else {
+  vertical: true,
 
-        button.innerHTML = 'узнать';
+  arrows: false,
 
-    }
+  infinite: true,
 
-};
+  speed: 950,
+
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+
+  initialSlide: maxItems - 1
+
+});
+
+$('.landing-text').slick({
+
+  swipe: false,
+
+  vertical: true,
+
+  arrows: false,
+
+  infinite: true,
+
+  speed: 900,
+
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+
+});
+
+$('.landing-p').slick({
+
+  swipe: false,
+
+  vertical: true,
+
+  arrows: false,
+
+  infinite: true,
+
+  speed: 900,
+
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+
+
+});
