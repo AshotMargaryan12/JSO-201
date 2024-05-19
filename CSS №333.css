@@ -127,7 +127,7 @@ html, body {
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://sportishka.com/uploads/posts/2021-11/1637355063_23-sportishka-com-p-santyago-bernabeu-stadion-komandnii-sport-28.jpg");
+ background-image: url("https://www.discoverwalks.com/blog/wp-content/uploads/2022/08/800px-estadio_santiago_bernabeu_-_02.jpg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
@@ -135,21 +135,20 @@ html, body {
  background-repeat: no-repeat;
  background-position: center center;
  }
-  #landing .parallax-one {
+ #landing .parallax-one {
  padding-top: 200px;
  padding-bottom: 200px;
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://i.pinimg.com/originals/b0/79/17/b0791784178d6cfc65fa325f4aabc591.jpg");
+ background-image: url("https://www.discoverwalks.com/blog/wp-content/uploads/2022/08/estadio_santiago_bernabeu_11.jpg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
  -webkit-background-size: cover;
  background-repeat: no-repeat;
- background-position: center center;
+ background-position: right center;
  }
- 
 @media screen and (max-width: 959px) and (min-width: 768px) {
  #flat .block {
   padding: 40px;
