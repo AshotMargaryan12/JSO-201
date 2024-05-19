@@ -147,7 +147,7 @@ html, body {
  -moz-background-size: cover;
  -webkit-background-size: cover;
  background-repeat: no-repeat;
- background-position: right center;
+ background-position: center center;
  }
 @media screen and (max-width: 959px) and (min-width: 768px) {
  #flat .block {
