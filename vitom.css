@@ -122,6 +122,12 @@ html, body {
  background-position: top center;
  }
  
+ #landing .line-break {
+ background: linear-gradient(60deg, #008000, #ffd700, #dc143c);
+ width: 100%;
+ margin: 0 auto;
+ }
+
  #landing h2{
  padding-top: 200px;
  padding-bottom: 200px;
@@ -136,14 +142,18 @@ html, body {
  background-repeat: no-repeat;
  background-position: center center;
  }
-
+  #landing .line-break {
+ background: linear-gradient(60deg, #008000, #ffd700, #dc143c);
+ width: 100%;
+ margin: 0 auto;
+ }
  #landing .h3{
  padding-top: 200px;
  padding-bottom: 200px;
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://raw.githack.com/AshotMargaryan12/JSO-201/main/1667499136_59-sportishka-com-p-stadion-real-madrid-vkontakte-67.jpg");
+ background-image: url("https://www.discoverwalks.com/blog/wp-content/uploads/2022/08/800px-panoramic_santiago_bernabeu.jpg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
@@ -151,32 +161,9 @@ html, body {
  background-repeat: no-repeat;
  background-position: center center;
  }
+  #landing .line-break {
+ background: linear-gradient(60deg, #008000, #ffd700, #dc143c);
+ width: 100%;
+ margin: 0 auto;
+ }
  
-@media screen and (max-width: 959px) and (min-width: 768px) {
- #flat .block {
-  padding: 40px;
-  width: 620px;
- }
-}
-@media screen and (max-width: 767px) {
- #flat .block {
-  padding: 30px;
-  width: 420px;
- }
- #flat h2 {
-  font-size: 30px;
- }
- #flat .block {
-  padding: 30px;
- }
- #flat .parallax-one, #flat .parallax-two, #flat .parallax-three {
-  padding-top: 100px;
-  padding-bottom: 100px;
- }
-}
-@media screen and (max-width: 479px) {
- #flat .block {
-  padding: 30px 15px;
-  width: 290px;
- }
-}
