@@ -120,7 +120,33 @@ html, body {
  -webkit-background-size: cover;
  background-repeat: no-repeat;
  background-position: top center;
+ #landing .parallax-one {
+ padding-top: 200px;
+ padding-bottom: 200px;
+ overflow: hidden;
+ position: relative;
+ width: 100%;
+ background-image: url("https://www.rma.ru/upload/iblock/4af/ФОТО%20БЕРНАБЕУ%201.jpg");
+ background-attachment: fixed;
+ background-size: cover;
+ -moz-background-size: cover;
+ -webkit-background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
 }
+#landing .parallax-one {
+ padding-top: 200px;
+ padding-bottom: 200px;
+ overflow: hidden;
+ position: relative;
+ width: 100%;
+ background-image: url("https://wallpapercave.com/wp/wp11012498.jpg");
+ background-attachment: fixed;
+ background-size: cover;
+ -moz-background-size: cover;
+ -webkit-background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
 #landing .line-break {
  background: linear-gradient(60deg, #008000, #ffd700, #dc143c);
  width: 100%;
