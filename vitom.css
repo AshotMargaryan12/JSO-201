@@ -107,7 +107,7 @@ html, body {
  background-color: black;
  opacity: 0.70;
 }
-#landing .parallax-one {
+#landing .h1{
  padding-top: 200px;
  padding-bottom: 200px;
  overflow: hidden;
@@ -122,7 +122,7 @@ html, body {
  background-position: top center;
  }
  
- #landing .parallax-two{
+ #landing h2{
  padding-top: 200px;
  padding-bottom: 200px;
  overflow: hidden;
@@ -137,7 +137,7 @@ html, body {
  background-position: center center;
  }
 
- #landing .parallax-three {
+ #landing .h3{
  padding-top: 200px;
  padding-bottom: 200px;
  overflow: hidden;
