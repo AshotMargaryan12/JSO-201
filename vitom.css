@@ -113,7 +113,7 @@ html, body {
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://raw.githack.com/AshotMargaryan12/JSO-201/main/1667499136_59-sportishka-com-p-stadion-real-madrid-vkontakte-67.jpg");
+ background-image: url("https://wallpapercave.com/wp/wp11012498.jpg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
@@ -134,7 +134,7 @@ html, body {
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://raw.githack.com/AshotMargaryan12/JSO-201/main/1637355107_38-sportishka-com-p-santyago-bernabeu-stadion-komandnii-sport-43.jpg");
+ background-image: url("https://sportishka.com/uploads/posts/2021-11/1637355063_23-sportishka-com-p-santyago-bernabeu-stadion-komandnii-sport-28.jpg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
@@ -153,7 +153,7 @@ html, body {
  overflow: hidden;
  position: relative;
  width: 100%;
- background-image: url("https://www.discoverwalks.com/blog/wp-content/uploads/2022/08/800px-panoramic_santiago_bernabeu.jpg");
+ background-image: url("https://w.forfun.com/fetch/c0/c048d0783a6872dbab79051cc4cd7a46.jpeg");
  background-attachment: fixed;
  background-size: cover;
  -moz-background-size: cover;
@@ -167,3 +167,32 @@ html, body {
  margin: 0 auto;
  }
  
+ 
+@media screen and (max-width: 959px) and (min-width: 768px) {
+ #flat .block {
+  padding: 40px;
+  width: 620px;
+ }
+}
+@media screen and (max-width: 767px) {
+ #flat .block {
+  padding: 30px;
+  width: 420px;
+ }
+ #flat h2 {
+  font-size: 30px;
+ }
+ #flat .block {
+  padding: 30px;
+ }
+ #flat .parallax-one, #flat .parallax-two, #flat .parallax-three {
+  padding-top: 100px;
+  padding-bottom: 100px;
+ }
+}
+@media screen and (max-width: 479px) {
+ #flat .block {
+  padding: 30px 15px;
+  width: 290px;
+ }
+}
